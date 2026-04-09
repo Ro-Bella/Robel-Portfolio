@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+
+<html lang="en" class="scroll-smooth"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="Robel Anbessie is a Full-Stack Web Developer specializing in MERN stack and Django, delivering secure and scalable applications."/>
+<meta name="keywords" content="Full-Stack Developer, MERN Stack, Django, Robel Anbessie, Portfolio, Web Development"/>
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Robel Anbessie | Full-Stack Developer Portfolio"/>
+<meta property="og:description" content="Expertise in end-to-end development, delivering high-performance applications with a commitment to security and scalability."/>
+<meta property="og:image" content="images/robel.jpg"/>
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:title" content="Robel Anbessie | Full-Stack Developer Portfolio"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;700&family=Inter:wght@400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-25..0&display=swap" rel="stylesheet"/>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer async></script>
+<script src="LanguageContext/language.js" defer></script>
+<title>Robel Anbessie | Full-Stack Developer Portfolio</title>
+<!-- ወሳኝ ምስሎችን ቀድሞ ለመጫን (LCP Improvement) -->
+<link rel="preload" as="image" href="images/robel.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="images/RobiBackground.jpg" fetchpriority="low">
+<script>
+    // Flicker መከላከያ - ገጹ ከመጫኑ በፊት ቲሙን ይወስናል
+    (function() {
+        const isDark = localStorage.theme === 'dark' || 
+                      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (isDark) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    })();
+</script>
+<link href="output.css" rel="stylesheet"/>
+</head>
+<body class="bg-background-light font-display text-slate-900 antialiased dark:bg-background-dark dark:text-slate-100 transition-colors duration-500">
+<!-- Header / Navigation -->
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-background-light/80 backdrop-blur-md dark:border-slate-800 dark:bg-background-dark/80">
+<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+<div class="flex items-center gap-2 group cursor-pointer">
+<div class="bg-primary rounded-lg p-1.5 flex items-center justify-center transition-all duration-700 group-hover:rotate-[360deg] group-hover:shadow-lg group-hover:shadow-primary/30">
+<img src="images/Robel%20log.jpg" alt="Logo" class="h-5 w-5" width="20" height="20" loading="eager"/>
+</div>
+<span class="text-base sm:text-lg font-bold tracking-tight transition-all duration-300 group-hover:text-primary group-hover:translate-x-1" data-i18n="hero-name">Robel Anbessie</span>
+</div>
+<div class="flex items-center gap-2 sm:gap-4">
+<div class="hidden md:flex items-center gap-8 ml-4">
+<a class="text-sm font-medium hover:text-primary hover:-translate-y-1 transition-all duration-300" href="#" data-i18n="nav-home">Home</a>
+<a class="text-sm font-medium hover:text-primary hover:-translate-y-1 transition-all duration-300" href="#projects" data-i18n="nav-projects">Projects</a>
+<button class="lang-toggle flex items-center gap-1 text-xs font-bold px-2 py-1 rounded-md bg-slate-100 dark:bg-slate-800 hover:text-primary transition-all">
+    <span class="material-symbols-outlined text-sm">language</span>
+    <span class="lang-text">Am</span>
+</button>
+<button class="theme-toggle relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 hover:text-primary hover:scale-110 transition-all duration-300 text-slate-600 dark:text-slate-400 overflow-hidden" aria-label="Toggle Dark Mode">
+    <!-- Moon Icon -->
+    <span class="material-symbols-outlined absolute transition-all duration-500 ease-spring transform rotate-0 scale-100 opacity-100 dark:rotate-90 dark:scale-0 dark:opacity-0 pointer-events-none">dark_mode</span>
+    <!-- Sun Icon -->
+    <span class="material-symbols-outlined absolute transition-all duration-500 ease-spring transform -rotate-90 scale-0 opacity-0 dark:rotate-0 dark:scale-100 dark:opacity-100 pointer-events-none">light_mode</span>
+</button>
+<a class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-600 hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-1 transition-all duration-300" href="#contact" data-i18n="nav-contact">Contact Me</a>
+</div>
+<button id="mobile-menu-btn" class="md:hidden text-slate-500">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<!-- Mobile Menu Overlay (Small Height Side Drawer) -->
+<div id="mobile-menu" class="fixed top-16 right-0 w-72 h-fit z-[60] bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-lg md:hidden transform translate-x-full transition-transform duration-500 ease-spring rounded-bl-3xl shadow-2xl border-l border-b border-slate-200 dark:border-slate-800">
+    <div class="flex flex-col p-8">
+        <nav class="flex flex-col gap-6 items-center text-center">
+            <a class="text-xl font-bold hover:text-primary hover:scale-105 transition-all duration-300" href="#" data-i18n="nav-home">Home</a>
+            <a class="text-xl font-bold hover:text-primary hover:scale-105 transition-all duration-300" href="#projects" data-i18n="nav-projects">Projects</a>
+            <button class="lang-toggle flex items-center gap-2 text-base font-bold hover:text-primary transition-all">
+                <span class="material-symbols-outlined">language</span>
+                <span class="lang-text">Am</span>
+            </button>
+            <button class="theme-toggle relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 hover:text-primary hover:scale-110 transition-all duration-300 text-slate-600 dark:text-slate-400 overflow-hidden" aria-label="Toggle Dark Mode">
+                <!-- Moon Icon -->
+                <span class="material-symbols-outlined absolute transition-all duration-500 ease-spring transform rotate-0 scale-100 opacity-100 dark:rotate-90 dark:scale-0 dark:opacity-0 pointer-events-none">dark_mode</span>
+                <!-- Sun Icon -->
+                <span class="material-symbols-outlined absolute transition-all duration-500 ease-spring transform -rotate-90 scale-0 opacity-0 dark:rotate-0 dark:scale-100 dark:opacity-100 pointer-events-none">light_mode</span>
+            </button>
+            <a class="w-full bg-primary text-white py-3 rounded-xl text-base font-bold shadow-lg shadow-primary/20 hover:bg-blue-600 transition-all duration-300 active:scale-95" href="#contact" data-i18n="nav-contact">Contact Me</a>
+        </nav>
+    </div>
+</div>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-16 pb-24 lg:pt-32 lg:pb-40 bg-[url('images/RobiBackground.jpg')] bg-cover bg-center bg-no-repeat">
+<div class="absolute inset-0 bg-white/95 dark:bg-slate-900/95"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="flex flex-col lg:flex-row items-center gap-12">
+<div class="flex-1 text-center lg:text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-6">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+                            <span data-i18n="hero-badge">Security-First Engineering</span>
+                        </div>
+<h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight animate-fade-in-left animate-shimmer bg-[linear-gradient(110deg,var(--color-primary),45%,#fff,55%,var(--color-primary))] bg-[length:250%_100%] bg-clip-text text-transparent" style="animation-delay: 200ms;">
+                            <span data-i18n="hero-name">Robel Anbessie</span>
+</h1>
+<h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6 leading-tight animate-fade-in-left text-slate-300" style="animation-delay: 600ms;" data-i18n="hero-subtitle">
+                            Full-Stack Web Developer
+</h2>
+
+<p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto lg:mx-0 animate-fade-in-left" style="animation-delay: 1000ms;" data-i18n="hero-desc">
+                            Expertise in end-to-end development, delivering high-performance applications with a commitment to security, scalability, and robust architecture.
+                        </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-left" style="animation-delay: 1200ms;">
+    <a href="#contact" class="bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-600 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-1.5 transition-all duration-300 transform hover:scale-105 active:scale-95 ease-spring" data-i18n="hero-hire">Hire Me</a>
+    <a href="path-to-your-resume.pdf" download class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/20 hover:shadow-xl hover:shadow-white/40 hover:-translate-y-1.5 transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105 active:scale-95 ease-spring">
+        <span class="material-symbols-outlined">download</span> <span data-i18n="hero-cv">Download CV</span>
+    </a>
+</div>
+</div>
+<div class="flex-1 relative animate-fade-in-right" style="animation-delay: 500ms;">
+<div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto animate-float group">
+<div class="absolute inset-0 bg-blue-500/40 rounded-full blur-3xl shadow-[0_0_80px_rgba(59,130,246,0.6)] group-hover:bg-blue-500/70 transition-all duration-500"></div>
+<div class="relative rounded-full border-4 border-primary/30 p-2 group-hover:border-primary transition-colors duration-500 bg-white">
+                    <img alt="Robel Anbessie professional headshot" class="rounded-full w-full h-full object-cover transition-all duration-500" width="320" height="320" src="images/robel.jpg" decoding="async"/>
+</div>
+<div class="absolute -bottom-6 -right-6 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border border-slate-200/50 dark:border-slate-700/50 p-4 rounded-2xl shadow-2xl hover:scale-110 transition-all duration-500 group/badge cursor-default">
+    <div class="flex items-center gap-3">
+        <div class="flex -space-x-2">
+            <div class="w-9 h-9 rounded-full bg-[#F7DF1E] flex items-center justify-center text-[10px] text-black font-black border-2 border-white dark:border-slate-800 shadow-sm group-hover/badge:translate-x-[-6px] transition-transform duration-300">JS</div>
+            <div class="w-9 h-9 rounded-full bg-[#339933] flex items-center justify-center text-[10px] text-white font-black border-2 border-white dark:border-slate-800 shadow-sm transition-transform duration-300">NODE</div>
+            <div class="w-9 h-9 rounded-full bg-[#61DAFB] flex items-center justify-center text-[10px] text-black font-black border-2 border-white dark:border-slate-800 shadow-sm group-hover/badge:translate-x-[6px] transition-transform duration-300">R</div>
+        </div>
+        <div class="flex flex-col">
+            <span class="text-[9px] uppercase tracking-widest text-slate-500 dark:text-slate-400 font-bold" data-i18n="badge-fullstack">Full Stack</span>
+            <span class="text-xs font-black text-slate-900 dark:text-white whitespace-nowrap" data-i18n="badge-mern">MERN Expert</span>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Background Decorative Elements -->
+<div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96">
+    <div class="w-full h-full bg-primary/5 rounded-full blur-3xl animate-blob"></div>
+</div>
+<div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-64 h-64">
+    <div class="w-full h-full bg-primary/10 rounded-full blur-3xl animate-blob" style="animation-delay: 2s;"></div>
+</div>
+</section>
+<!-- Tech Stack Marquee -->
+<section class="py-10 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800 overflow-hidden">
+    <div class="flex overflow-hidden group mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+        <div class="flex shrink-0 animate-infinite-scroll group-hover:[animation-play-state:paused] items-center gap-16 pr-16 grayscale group-hover:grayscale-0 transition-all duration-500">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="HTML5" title="HTML5" width="56" height="56" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="CSS3" title="CSS3" width="56" height="56" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="JavaScript" title="JavaScript" width="56" height="56" loading="lazy" />
+            <span class="material-symbols-outlined text-5xl text-slate-600 dark:text-slate-400 hover:scale-110 transition-transform duration-300" title="Responsive Design">devices</span>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="Tailwind CSS" title="Tailwind CSS" width="56" height="56" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="Python" title="Python" width="56" height="56" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="MongoDB" title="MongoDB" width="56" height="56" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/insomnia/insomnia-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="Insomnia" title="Insomnia" width="56" height="56" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="PostgreSQL" title="PostgreSQL" width="56" height="56" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300 dark:invert" alt="GitHub" title="GitHub" width="56" height="56" loading="lazy" decoding="async" />
+            <span class="material-symbols-outlined text-5xl text-slate-600 dark:text-slate-400 hover:scale-110 transition-transform duration-300" title="SQL">database</span>
+            <img src="https://www.django-rest-framework.org/img/logo.png" class="h-14 w-14 hover:scale-110 transition-transform duration-300 object-contain" alt="Django REST Framework" title="Django REST Framework" loading="lazy" decoding="async" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="VS Code" title="VS Code" width="56" height="56" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="Git" title="Git" width="56" height="56" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="Vite" title="Vite" width="56" height="56" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="Figma" title="Figma" width="56" height="56" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300 dark:invert" alt="Django" title="Django" width="56" height="56" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="Postman" title="Postman" width="56" height="56" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="React" title="React" width="56" height="56" loading="lazy" />
+        </div>
+        <div class="flex shrink-0 animate-infinite-scroll group-hover:[animation-play-state:paused] items-center gap-16 pr-16 grayscale group-hover:grayscale-0 transition-all duration-500" aria-hidden="true">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="HTML5" title="HTML5" width="56" height="56" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="CSS3" title="CSS3" width="56" height="56" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="JavaScript" title="JavaScript" width="56" height="56" />
+            <span class="material-symbols-outlined text-5xl text-slate-600 dark:text-slate-400 hover:scale-110 transition-transform duration-300" title="Responsive Design">devices</span>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="Tailwind CSS" title="Tailwind CSS" width="56" height="56" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="Python" title="Python" width="56" height="56" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="MongoDB" title="MongoDB" width="56" height="56" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/insomnia/insomnia-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="Insomnia" title="Insomnia" width="56" height="56" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="PostgreSQL" title="PostgreSQL" width="56" height="56" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300 dark:invert" alt="GitHub" title="GitHub" width="56" height="56" />
+            <span class="material-symbols-outlined text-5xl text-slate-600 dark:text-slate-400 hover:scale-110 transition-transform duration-300" title="SQL">database</span>
+            <img src="https://www.django-rest-framework.org/img/logo.png" class="h-14 w-14 hover:scale-110 transition-transform duration-300 object-contain" alt="Django REST Framework" title="Django REST Framework" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="VS Code" title="VS Code" width="56" height="56" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="Git" title="Git" width="56" height="56" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="Vite" title="Vite" width="56" height="56" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="Figma" title="Figma" width="56" height="56" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300 dark:invert" alt="Django" title="Django" width="56" height="56" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="Postman" title="Postman" width="56" height="56" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" class="h-14 w-14 hover:scale-110 transition-transform duration-300" alt="React" title="React" width="56" height="56" />
+        </div>
+    </div>
+</section>
+<!-- Core Focus Section -->
+<section class="py-20 bg-slate-50 dark:bg-slate-900/50 overflow-hidden" style="content-visibility: auto; contain-intrinsic-size: 1px 500px;">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4" data-i18n="focus-title">Core Technology Focus</h2>
+<div class="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="reveal opacity-0 bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800 p-8 rounded-2xl text-center group hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
+<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">developer_board</span>
+</div>
+<h3 class="text-xl font-bold mb-3">React</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Building dynamic, component-driven user interfaces with a focus on performance and seamless UX.
+                        </p>
+</div>
+<div class="reveal opacity-0 bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800 p-8 rounded-2xl text-center group hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10" style="transition-delay: 100ms;">
+<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">settings_ethernet</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Node.js</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Developing scalable server-side logic and robust RESTful APIs to power complex applications.
+                        </p>
+</div>
+<div class="reveal opacity-0 bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800 p-8 rounded-2xl text-center group hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10" style="transition-delay: 200ms;">
+<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">database</span>
+</div>
+<h3 class="text-xl font-bold mb-3">MongoDB</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Architecting flexible, high-availability data solutions for modern cloud-native environments.
+                        </p>
+</div>
+<div class="bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800 p-8 rounded-2xl text-center group hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
+<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">terminal</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Python & Django</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Building secure, scalable backends with rapid development capabilities using the Django ecosystem.
+                        </p>
+</div>
+<div class="bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800 p-8 rounded-2xl text-center group hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
+<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">table_chart</span>
+</div>
+<h3 class="text-xl font-bold mb-3">PostgreSQL</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Managing relational data with complex schemas, ensuring ACID compliance and query performance.
+                        </p>
+</div>
+<div class="bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800 p-8 rounded-2xl text-center group hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
+<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">api</span>
+</div>
+<h3 class="text-xl font-bold mb-3">RESTful APIs</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Crafting predictable, standard-compliant APIs with Django REST Framework for mobile and web clients.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Competencies -->
+<section class="py-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+            <h2 class="text-3xl font-bold mb-4" data-i18n="competencies-title">Technical Competencies</h2>
+            <p class="text-slate-600 dark:text-slate-400" data-i18n="competencies-subtitle">A 3D showcase of my specialized engineering toolkit.</p>
+            <div class="w-20 h-1.5 bg-primary mx-auto rounded-full mt-4"></div>
+        </div>
+
+        <div class="flex justify-center items-center" style="min-height: 220px;">
+            <div class="scene" style="width: 280px; height: 180px;">
+                <div class="carousel animate-rotate-carousel">
+                    <div class="carousel__cell absolute flex flex-col items-center justify-center w-[260px] h-[160px] left-[10px] top-[10px] rounded-xl border-2 border-white/20 p-4 shadow-lg text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center;">
+                        <div class="mb-2"><span class="material-symbols-outlined text-3xl">data_object</span></div>
+                        <h4 class="font-bold text-lg">Frontend</h4>
+                        <p class="text-sm text-slate-200 text-center">React.js & Next.js <br/> Tailwind CSS <br/>Redux / Context API</p>
+                    </div>
+
+                    <div class="carousel__cell absolute flex flex-col items-center justify-center w-[260px] h-[160px] left-[10px] top-[10px] rounded-xl border-2 border-white/20 p-4 shadow-lg text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center;">
+                        <div class="mb-2"><span class="material-symbols-outlined text-3xl">dns</span></div>
+                        <h4 class="font-bold text-lg">Backend</h4>
+                        <p class="text-sm text-slate-200 text-center">Node.js & Express.js <br/> JWT & OAuth 2.0 <br/> Microservices </p>
+                    </div>
+                    <div class="carousel__cell absolute flex flex-col items-center justify-center w-[260px] h-[160px] left-[10px] top-[10px] rounded-xl border-2 border-white/20 p-4 shadow-lg text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1934&auto=format&fit=crop'); background-size: cover; background-position: center;">
+                        <div class="mb-2"><span class="material-symbols-outlined text-3xl">storage</span></div>
+                        <h4 class="font-bold text-lg">Database</h4>
+                        <p class="text-sm text-slate-200 text-center">MongoDB (NoSQL) <br/> PostgreSQL (SQL) <br/> Prisma / Mongoose</p>
+                    </div>
+                    <div class="carousel__cell absolute flex flex-col items-center justify-center w-[260px] h-[160px] left-[10px] top-[10px] rounded-xl border-2 border-white/20 p-4 shadow-lg text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1605106702734-205df2244aa7?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center;">
+                        <div class="mb-2"><span class="material-symbols-outlined text-3xl">security</span></div>
+                        <h4 class="font-bold text-lg">DevSecOps</h4>
+                        <p class="text-sm text-slate-200 text-center">Docker & Kubernetes <br/> CI/CD (GitHub Actions) <br/> Jenkins & AWS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Featured Projects Section -->
+<section class="py-24 bg-slate-50 dark:bg-slate-900/50" id="projects" style="content-visibility: auto; contain-intrinsic-size: 1px 800px;">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4" data-i18n="projects-title">Featured Projects</h2>
+<p class="text-slate-600 dark:text-slate-400" data-i18n="projects-subtitle">A selection of my recent work.</p>
+<div class="w-20 h-1.5 bg-primary mx-auto rounded-full mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-2xl border border-white/20 dark:border-slate-700/50 overflow-hidden group transform hover:-translate-y-2 transition-all duration-500 shadow-lg hover:shadow-primary/30">
+<div class="relative">
+<!-- You should replace this with your project image -->
+<img alt="Shega Skin Studio Preview" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" src="images/shega.jpg" loading="lazy" width="400" height="250" decoding="async" fetchpriority="low"/>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2" data-i18n="project-shega-title">Shega Skin Studio</h3>
+<div class="text-slate-600 dark:text-slate-400 text-sm mb-4 space-y-2">
+    <p data-i18n="project-shega-desc">A full-stack MERN application for digitizing skin care studio appointments.</p>
+    <ul class="list-disc list-inside space-y-1">
+        <li>Online Booking & Real-time Scheduling</li>
+        <li>Admin Dashboard for Appointment Management</li>
+        <li>Secure JWT-based Authentication</li>
+    </ul>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">Node.js (JavaScript)</span>
+<span class="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">Web Framework: Express.js</span>
+<span class="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">Database: MongoDB , Mongoose</span>
+<span class="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full"> Authentication & Security JWT (JSON Web Token) ,Environment Variables</span>
+</div>
+<div class="flex items-center gap-4">
+<a class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:shadow-lg hover:shadow-primary/25 transition-all" href="https://shega-skin-studio.vercel.app/" target="_blank" rel="noopener noreferrer">
+                            Live Demo
+                        </a>
+<a class="text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors" href="https://github.com/Ro-Bella/Shega-Skin-Studio" target="_blank" rel="noopener noreferrer">
+                            Source Code
+                        </a>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="bg-background-light dark:bg-background-dark rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 shadow-md hover:shadow-primary/20">
+<div class="relative">
+<!-- You should replace this with your project image -->
+<img alt="Project Thumbnail" class="w-full h-48 object-cover" src="https://via.placeholder.com/400x250/101622/256af4?text=Project+Image"/>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Project Name Two</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed">
+                        Provide a short, compelling description of your project here. Talk about the problem it solves and the value it brings.
+                    </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">Next.js</span>
+<span class="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">Prisma</span>
+<span class="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">PostgreSQL</span>
+</div>
+<div class="flex items-center gap-4">
+<a class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:shadow-lg hover:shadow-primary/25 transition-all" href="#">
+                            Live Demo
+                        </a>
+<a class="text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors" href="#">
+                            Source Code
+                        </a>
+</div>
+</div>
+</div>
+<!-- Project 3 (You can add more) -->
+<div class="bg-background-light dark:bg-background-dark rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 shadow-md hover:shadow-primary/20">
+<div class="relative">
+<!-- You should replace this with your project image -->
+<img alt="Project Thumbnail" class="w-full h-48 object-cover" src="https://via.placeholder.com/400x250/101622/256af4?text=Project+Image"/>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Project Name Three</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed">
+                        Provide a short, compelling description of your project here. Talk about the problem it solves and the value it brings.
+                    </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">MongoDB</span>
+<span class="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">Mongoose</span>
+<span class="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">JWT</span>
+</div>
+<div class="flex items-center gap-4">
+<a class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:shadow-lg hover:shadow-primary/25 transition-all" href="#">
+                            Live Demo
+                        </a>
+<a class="text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors" href="#">
+                            Source Code
+                        </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Me Section -->
+<section class="py-24 bg-slate-100 dark:bg-slate-900">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="text-4xl font-extrabold mb-8 leading-tight" data-i18n="why-title">Why Partner With Me?</h2>
+<div class="space-y-8">
+<div class="flex gap-4">
+<div class="shrink-0 w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined">high_quality</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2" data-i18n="why-quality-t">Uncompromising Quality</h4>
+<p class="text-slate-600 dark:text-slate-400" data-i18n="why-quality-d">Clean, maintainable code following industry best practices and SOLID principles for long-term sustainability.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="shrink-0 w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2" data-i18n="why-scale-t">Engineered for Scalability</h4>
+<p class="text-slate-600 dark:text-slate-400" data-i18n="why-scale-d">Systems built to handle growth, from initial launch to millions of users, without performance degradation.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="shrink-0 w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined">handshake</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2" data-i18n="why-commit-t">Project Commitment</h4>
+<p class="text-slate-600 dark:text-slate-400" data-i18n="why-commit-d">A security-first mindset combined with clear communication and on-time delivery at every SDLC stage.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square bg-gradient-to-br from-primary to-blue-700 rounded-3xl p-1 overflow-hidden">
+<div class="bg-background-light dark:bg-background-dark w-full h-full rounded-[1.4rem] p-8 flex flex-col justify-center">
+<div class="mb-6 space-y-4">
+<div class="h-2 w-3/4 bg-slate-200 dark:bg-slate-800 rounded-full"></div>
+<div class="h-2 w-full bg-slate-200 dark:bg-slate-800 rounded-full"></div>
+<div class="h-2 w-5/6 bg-slate-200 dark:bg-slate-800 rounded-full"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-primary/10 rounded-xl border border-primary/20">
+<div class="text-2xl font-bold text-primary">50+</div>
+<div class="text-xs uppercase font-bold text-slate-500">Deployments</div>
+</div>
+<div class="p-4 bg-primary/10 rounded-xl border border-primary/20">
+<div class="text-2xl font-bold text-primary">99%</div>
+<div class="text-xs uppercase font-bold text-slate-500">Uptime Focus</div>
+</div>
+<div class="p-4 bg-primary/10 rounded-xl border border-primary/20">
+<div class="text-2xl font-bold text-primary">100%</div>
+<div class="text-xs uppercase font-bold text-slate-500">Commitment</div>
+</div>
+<div class="p-4 bg-primary/10 rounded-xl border border-primary/20">
+<div class="text-2xl font-bold text-primary">A+</div>
+<div class="text-xs uppercase font-bold text-slate-500">Security Audit</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer / Bottom Navigation -->
+<footer id="contact" class="relative overflow-hidden bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 pt-24 pb-12">
+    <!-- Background Decorative Elements -->
+    <div class="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+    <div class="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 mb-16 relative z-10">
+    <!-- Left Column: Info -->
+    <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-6" data-i18n="nav-contact">
+            Contact Me
+        </div>
+        <h2 class="text-4xl font-extrabold mb-6 leading-tight bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent" data-i18n="contact-title">Let's Work Together</h2>
+        <p class="text-lg text-slate-600 dark:text-slate-400 mb-10 leading-relaxed" data-i18n="contact-desc">
+            I'm excited to collaborate on innovative projects! Feel free to reach out to discuss opportunities or ideas.
+        </p>
+        
+        <div class="flex flex-col gap-4">
+            <a href="https://github.com/Ro-Bella" target="_blank" rel="noopener" class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-primary hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-1.5 transition-all duration-300 group">
+                <div class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center group-hover:bg-primary group-hover:text-white group-hover:rotate-12 transition-all duration-300">
+                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="w-6 h-6 dark:invert group-hover:invert-0 group-hover:brightness-0 group-hover:invert group-hover:scale-110 transition-transform duration-300" alt="GitHub">
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg">GitHub</h4>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm">Check out my repositories</p>
+                </div>
+            </a>
+            
+            <a href="https://www.linkedin.com/in/robel-anbessie-382709196" target="_blank" rel="noopener" class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-[#0077b5] hover:shadow-xl hover:shadow-[#0077b5]/20 hover:-translate-y-1.5 transition-all duration-300 group">
+                <div class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center group-hover:bg-[#0077b5]/10 group-hover:rotate-12 transition-all duration-300">
+                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" class="w-6 h-6 group-hover:scale-110 transition-transform duration-300" alt="LinkedIn">
+                </div>
+                 <div>
+                    <h4 class="font-bold text-lg">LinkedIn</h4>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm">Connect professionally</p>
+                </div>
+            </a>
+            <a href="https://t.me/Robi_Bella" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-primary hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-1.5 transition-all duration-300 group">
+                <div class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center group-hover:bg-primary group-hover:text-white group-hover:rotate-12 transition-all duration-300">
+                     <span class="material-symbols-outlined text-2xl text-slate-600 dark:text-slate-300 group-hover:text-white group-hover:scale-110 transition-transform duration-300">send</span>
+                </div>
+                 <div>
+                    <h4 class="font-bold text-lg">Telegram</h4>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm">Send me a message</p>
+                </div>
+            </a>
+            <a href="tel:+251911620764" class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-primary hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-1.5 transition-all duration-300 group">
+                <div class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center group-hover:bg-primary group-hover:text-white group-hover:rotate-12 transition-all duration-300">
+                     <span class="material-symbols-outlined text-2xl text-slate-600 dark:text-slate-300 group-hover:text-white group-hover:scale-110 transition-transform duration-300">call</span>
+                </div>
+                 <div>
+                    <h4 class="font-bold text-lg">Phone</h4>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm">+251 911 62 07 64</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Right Column: Form -->
+    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 shadow-xl shadow-slate-200/50 dark:shadow-none">
+        <h3 class="text-2xl font-bold mb-6" data-i18n="form-title">Get in Touch</h3>
+        <form id="contact-form" class="space-y-6">
+            <div class="relative">
+                <input type="text" id="full_name" name="full_name" class="peer w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-transparent" placeholder="Full Name" required="" data-i18n="label-name"/>
+                <label for="full_name" class="absolute left-4 -top-3.5 text-sm text-slate-700 dark:text-slate-300 transition-all pointer-events-none peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-400 peer-placeholder-shown:top-3.5 peer-focus:-top-3.5 peer-focus:text-primary peer-focus:text-sm peer-focus:font-bold" data-i18n="label-name">Full Name</label>
+            </div>
+            
+            <div class="relative">
+                <input type="email" id="email_address" name="email_address" class="peer w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-transparent" placeholder="Your Email" required="" data-i18n="label-email">
+                <label for="email_address" class="absolute left-4 -top-3.5 text-sm text-slate-700 dark:text-slate-300 transition-all pointer-events-none peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-400 peer-placeholder-shown:top-3.5 peer-focus:-top-3.5 peer-focus:text-primary peer-focus:text-sm peer-focus:font-bold" data-i18n="label-email">Your Email</label>
+            </div>
+            
+            <div class="relative">
+                <input type="text" id="subject" name="subject" class="peer w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-transparent" placeholder="Subject" required="" data-i18n="label-subject">
+                <label for="subject" class="absolute left-4 -top-3.5 text-sm text-slate-700 dark:text-slate-300 transition-all pointer-events-none peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-400 peer-placeholder-shown:top-3.5 peer-focus:-top-3.5 peer-focus:text-primary peer-focus:text-sm peer-focus:font-bold" data-i18n="label-subject">Subject</label>
+            </div>
+
+            <div class="relative">
+                <textarea id="message" name="message" rows="4" class="peer w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none placeholder:text-transparent" placeholder="Message" required="" data-i18n="label-message"></textarea>
+                <label for="message" class="absolute left-4 -top-3.5 text-sm text-slate-700 dark:text-slate-300 transition-all pointer-events-none peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-400 peer-placeholder-shown:top-3.5 peer-focus:-top-3.5 peer-focus:text-primary peer-focus:text-sm peer-focus:font-bold" data-i18n="label-message">Message</label>
+            </div>
+
+            <button id="submit-button" type="submit" class="group w-full flex items-center justify-center gap-2 py-4 bg-primary hover:bg-blue-600 text-white font-bold rounded-xl transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-1 mt-2">
+                <span data-i18n="btn-submit">Submit Message</span>
+                <span class="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-1">send</span>
+            </button>
+            <div id="form-status" class="hidden text-center text-sm font-bold mt-3"></div>
+        </form>
+    </div>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-slate-500">&copy; <span id="current-year"></span> <span data-i18n="hero-name">Robel Anbessie</span>. <span data-i18n="footer-rights">All rights reserved.</span></p>
+<div class="flex gap-6 text-xs text-slate-500">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+<!-- Back to Top Button -->
+<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-2 bg-slate-200 dark:bg-slate-800 rounded-full hover:bg-primary hover:text-white transition-colors" aria-label="Back to Top">
+    <span class="material-symbols-outlined text-sm">arrow_upward</span>
+</button>
+</div>
+</div>
+</div>
+</footer>
+<!-- Bottom Nav Bar Mobile (Inspired by Component) -->
+<div id="mobile-bottom-nav" class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background-light dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 flex justify-around items-center py-2 px-4 shadow-[0_-4px_10px_rgba(0,0,0,0.1)]">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold" data-i18n="nav-home">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#projects">
+<span class="material-symbols-outlined">work</span>
+<span class="text-[10px] font-medium" data-i18n="nav-projects">Projects</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#contact">
+<span class="material-symbols-outlined">alternate_email</span>
+<span class="text-[10px] font-medium" data-i18n="nav-contact">Contact</span>
+</a>
+</div>
+
+<script type="text/javascript">
+    // Auto-update copyright year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // EmailJS - ደህንነቱ በተጠበቀ ሁኔታ ማስጀመር
+    window.onload = function() {
+        emailjs.init({
+            publicKey: "pvnueexYIrXkhwgmZ",
+        });
+    };
+
+    // Dark/Light Mode መቀያየሪያ logic
+    const themeToggleBtns = document.querySelectorAll('.theme-toggle');
+    const htmlElement = document.documentElement;
+
+    themeToggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            localStorage.theme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
+        });
+    });
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const submitBtn = document.getElementById('submit-button');
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Sending...';
+
+        // ከ EmailJS ዳሽቦርድዎ ላይ የሚያገኟቸውን ID-ዎች እዚህ ይተኩ
+        const serviceID = 'service_znq5fx3';
+        const templateID = 'template_mo0pmkm';
+
+        // ፎርሙ ላይ ያሉትን `name` attribute-ዎች በመጠቀም መረጃውን ይልካል
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+                const status = document.getElementById('form-status');
+                status.textContent = 'Message sent successfully!';
+                status.className = 'text-center text-sm font-bold mt-3 text-green-600 dark:text-green-400';
+                submitBtn.innerHTML = originalBtnText;
+                document.getElementById('contact-form').reset();
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    status.className = 'hidden';
+                }, 4000);
+            }, (err) => {
+                const status = document.getElementById('form-status');
+                status.textContent = 'Failed to send message. Please try again.';
+                status.className = 'text-center text-sm font-bold mt-3 text-red-600 dark:text-red-400';
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            });
+    });
+
+    // Mobile Menu Toggle Logic
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('translate-x-full');
+            const icon = mobileMenuBtn.querySelector('span');
+            if (mobileMenu.classList.contains('translate-x-full')) {
+                icon.textContent = 'menu';
+            } else {
+                icon.textContent = 'close';
+            }
+        });
+
+        // Close menu using event delegation
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target.closest('a')) {
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenuBtn.querySelector('span').textContent = 'menu';
+            }
+        });
+
+    // ሜኑው ክፍት ሆኖ ከሜኑው ወይም ከበተኑ ውጭ (ባዶ ቦታ) ሲነካ እንዲዘጋ
+    document.addEventListener('click', (e) => {
+        const isMenuOpen = !mobileMenu.classList.contains('translate-x-full');
+        if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenuBtn.querySelector('span').textContent = 'menu';
+        }
+    });
+    }
+
+    // Header Scroll Effect (Add shadow on scroll)
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+            header.classList.add('shadow-md');
+        } else {
+            header.classList.remove('shadow-md');
+        }
+    });
+
+    // Mobile Bottom Nav Active State Logic
+    const bottomNavLinks = document.querySelectorAll('#mobile-bottom-nav a');
+    bottomNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // ሁሉንም ሊንኮች ወደ ነበሩበት (Inactive) መመለስ
+            bottomNavLinks.forEach(nav => {
+                nav.className = 'flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400 transition-colors';
+                nav.querySelector('span:last-child').className = 'text-[10px] font-medium';
+            });
+            // የተጫነውን (Active) ሊንክ ቀለም መቀየር
+            this.className = 'flex flex-col items-center gap-1 text-primary transition-colors';
+            this.querySelector('span:last-child').className = 'text-[10px] font-bold';
+        });
+    });
+
+    // Framer Motion-like Scroll Reveal Observer
+    const observerOptions = {
+        threshold: 0.1, // በሞባይል ላይ ቶሎ እንዲጀምር
+        rootMargin: '0px 0px -10% 0px' // በፐርሰንት በመሆኑ ለተለያዩ ስክሪኖች ይረዳል
+    };
+
+    // ተጠቃሚው አኒሜሽን እንዲቀንስ (Reduced motion) ከመረጠ ማረጋገጥ
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (prefersReducedMotion) {
+                    // አኒሜሽን ለማይፈልጉ ተጠቃሚዎች በቀጥታ ማሳየት
+                    entry.target.classList.remove('opacity-0');
+                } else {
+                    entry.target.classList.add('animate-reveal-up');
+                    entry.target.classList.remove('opacity-0');
+                }
+                revealObserver.unobserve(entry.target); // አኒሜሽኑ አንዴ ብቻ እንዲሰራ
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+</body></html>

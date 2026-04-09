@@ -1,0 +1,89 @@
+@import "tailwindcss";
+@config "./tailwind.config.js";
+
+@theme {
+  --color-primary: #256af4;
+  --color-background-light: #f5f6f8;
+  --color-background-dark: #101622;
+  
+  --font-display: "Inter", sans-serif;
+
+  --animate-infinite-scroll: infinite-scroll 40s linear infinite;
+  --animate-fade-in-left: fade-in-left 1.5s ease-out both;
+  --animate-fade-in-right: fade-in-right 1.5s ease-out both;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-blob: blob 7s infinite;
+  --animate-reveal-up: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-rotate-carousel: rotate-carousel 20s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  --animate-shimmer: shimmer 3s infinite linear;
+
+  @keyframes infinite-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
+  @keyframes fade-in-left {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fade-in-right {
+    0% { opacity: 0; transform: translateX(50px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+  @keyframes reveal-up {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes rotate-carousel {
+    from { transform: translateZ(-130px) rotateY(0); }
+    to { transform: translateZ(-130px) rotateY(-360deg); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+}
+
+@custom-variant dark (&:is(.dark, .dark *));
+
+/* Custom styles from style.css */
+body {
+  min-height: 100dvh;
+}
+.scene {
+    position: relative;
+    perspective: 1200px;
+}
+.carousel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+}
+.carousel:hover {
+    animation-play-state: paused;
+}
+.carousel__cell {
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: brightness(0.7);
+}
+.carousel__cell:hover { filter: brightness(1.1); }
+.carousel__cell:nth-child(1) { transform: rotateY(  0deg) translateZ(150px); }
+.carousel__cell:nth-child(2) { transform: rotateY( 90deg) translateZ(150px); }
+.carousel__cell:nth-child(3) { transform: rotateY(180deg) translateZ(150px); }
+.carousel__cell:nth-child(4) { transform: rotateY(270deg) translateZ(150px); }
+
+/* Smooth Scroll Reveal Initial State */
+.reveal {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+}

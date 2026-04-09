@@ -1,0 +1,49 @@
+body {
+  min-height: max(884px, 100dvh);
+}
+.scene {
+    position: relative;
+    perspective: 1200px;
+}
+.carousel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotate-carousel 20s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@keyframes rotate-carousel {
+    from { transform: translateZ(-130px) rotateY(0); }
+    to { transform: translateZ(-130px) rotateY(-360deg); }
+}
+.carousel:hover {
+    animation-play-state: paused;
+}
+.carousel__cell {
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: brightness(0.7);
+}
+.carousel__cell:hover { filter: brightness(1.1); }
+.carousel__cell:nth-child(1) { transform: rotateY(  0deg) translateZ(150px); }
+.carousel__cell:nth-child(2) { transform: rotateY( 90deg) translateZ(150px); }
+.carousel__cell:nth-child(3) { transform: rotateY(180deg) translateZ(150px); }
+.carousel__cell:nth-child(4) { transform: rotateY(270deg) translateZ(150px); }
+
+@keyframes infinite-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+.animate-infinite-scroll {
+    animation: infinite-scroll 40s linear infinite;
+}
+
+.group:hover .animate-infinite-scroll {
+    animation-play-state: paused;
+}
+
+/* Smooth Scroll Reveal Initial State */
+.reveal {
+    will-change: transform, opacity;
+    transform: translateZ(0); /* GPU acceleration ለሞባይል */
+}

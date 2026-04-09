@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "no-inline-styles": "off",
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "text-size-adjust",
+          "border-color: color-mix(in srgb, #256af4 30%, transparent)"
+        ]
+      }
+    ]
+  }
+}
