@@ -95,7 +95,11 @@ function updateLanguage(lang) {
     document.documentElement.lang = lang;
     
     // አማርኛ ሲሆን ፎንቱን ይቀይራል
-    document.body.style.fontFamily = lang === 'am' ? "'Noto Sans Ethiopic', 'Inter', sans-serif" : "'Inter', sans-serif";
+    if (lang === 'am') {
+        document.body.classList.add('font-amharic');
+    } else {
+        document.body.classList.remove('font-amharic');
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
