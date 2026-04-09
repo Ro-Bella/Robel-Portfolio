@@ -23,7 +23,7 @@
 <link rel="preload" as="image" href="images/robel.jpg" fetchpriority="high">
 <link rel="preload" as="image" href="images/RobiBackground.jpg" fetchpriority="low">
 <script>
-    // Flicker መከላከያ - ገጹ ከመጫኑ በፊት ቲሙን ይወስናል
+    // Flicker መከላከያ - ገጹ ከመጫኑ በፊት ቲሙን እና ቋንቋውን ይወስናል
     (function() {
         const isDark = localStorage.theme === 'dark' || 
                       (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
@@ -32,11 +32,21 @@
         } else {
             document.documentElement.classList.remove('dark');
         }
+
+        const savedLang = localStorage.getItem('preferredLang') || 'en';
+        document.documentElement.lang = savedLang;
+        if (savedLang === 'am') {
+            document.documentElement.classList.add('font-amharic-init');
+        }
     })();
 </script>
 <link href="output.css" rel="stylesheet"/>
 <style>
     .font-amharic {
+        font-family: 'Noto Sans Ethiopic', sans-serif !important;
+    }
+    /* ገጹ ሳይጫን ፎንቱ እንዲዘጋጅ */
+    .font-amharic-init body {
         font-family: 'Noto Sans Ethiopic', sans-serif !important;
     }
 </style>

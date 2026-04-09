@@ -100,8 +100,10 @@ function updateLanguage(lang) {
     // አማርኛ ሲሆን ፎንቱን ይቀይራል
     if (lang === 'am') {
         document.body.classList.add('font-amharic');
+        document.documentElement.classList.add('font-amharic-init');
     } else {
         document.body.classList.remove('font-amharic');
+        document.documentElement.classList.remove('font-amharic-init');
     }
 }
 
