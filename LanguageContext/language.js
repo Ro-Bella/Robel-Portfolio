@@ -79,8 +79,11 @@ function updateLanguage(lang) {
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang][key]) {
-            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            // Handle inputs, textareas, and selects with placeholders
+            if (['INPUT', 'TEXTAREA'].includes(el.tagName)) {
                 el.placeholder = translations[lang][key];
+            } else if (el.tagName === 'SELECT' && el.options.length > 0) {
+                el.options[0].text = translations[lang][key];
             } else {
                 el.textContent = translations[lang][key];
             }
