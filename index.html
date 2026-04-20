@@ -57,9 +57,9 @@
 <!-- Header / Navigation -->
 <!-- Scroll Progress Bar -->
 <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-primary z-[100] transition-all duration-150" style="width: 0%"></div>
-<header class="sticky top-0 z-50 border-b border-slate-200 bg-background-light/80 backdrop-blur-md dark:border-slate-800 dark:bg-background-dark/80 transition-all duration-300">
+<header class="sticky top-0 z-50 border-b border-slate-200/60 bg-white/70 backdrop-blur-xl backdrop-saturate-150 dark:border-slate-800/60 dark:bg-slate-900/70 transition-all duration-300">
 <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-<div class="flex items-center gap-2 group cursor-pointer">
+<div id="header-logo" class="flex items-center gap-2 group cursor-pointer">
 <div class="bg-primary rounded-lg p-1.5 flex items-center justify-center transition-all duration-700 group-hover:rotate-[360deg] group-hover:shadow-lg group-hover:shadow-primary/30">
 <img src="images/Robel%20log.jpg" alt="Logo" class="h-5 w-5" width="20" height="20" loading="eager"/>
 </div>
@@ -67,11 +67,17 @@
 </div>
 <div class="flex items-center gap-2 sm:gap-4">
 <div class="hidden md:flex items-center gap-8 ml-4">
-<a class="text-sm font-medium hover:text-primary hover:-translate-y-1 transition-all duration-300" href="#" data-i18n="nav-home">Home</a>
-<a class="text-sm font-medium hover:text-primary hover:-translate-y-1 transition-all duration-300" href="#projects" data-i18n="nav-projects">Projects</a>
-<button class="lang-toggle flex items-center gap-1 text-xs font-bold px-2 py-1 rounded-md bg-slate-100 dark:bg-slate-800 hover:text-primary transition-all">
-    <span class="material-symbols-outlined text-sm">language</span>
-    <span class="lang-text">Am</span>
+<a class="relative text-sm font-semibold hover:text-primary transition-colors duration-300 group/nav" href="#" data-i18n="nav-home">
+    Home
+    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover/nav:w-full"></span>
+</a>
+<a class="relative text-sm font-semibold hover:text-primary transition-colors duration-300 group/nav" href="#projects" data-i18n="nav-projects">
+    Projects
+    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover/nav:w-full"></span>
+</a>
+<button class="lang-toggle group flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-primary/50 hover:shadow-md hover:shadow-primary/10 transition-all duration-300">
+    <span class="material-symbols-outlined text-base group-hover:rotate-180 transition-transform duration-500">language</span>
+    <span class="lang-text text-primary">Am</span>
 </button>
 <button class="theme-toggle relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 hover:text-primary hover:scale-110 transition-all duration-300 text-slate-600 dark:text-slate-400 overflow-hidden" aria-label="Toggle Dark Mode">
     <!-- Moon Icon -->
@@ -79,7 +85,7 @@
     <!-- Sun Icon -->
     <span class="material-symbols-outlined absolute transition-all duration-500 ease-spring transform -rotate-90 scale-0 opacity-0 dark:rotate-0 dark:scale-100 dark:opacity-100 pointer-events-none">light_mode</span>
 </button>
-<a class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-600 hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-1 transition-all duration-300" href="#contact" data-i18n="nav-contact">Contact Me</a>
+<a class="bg-gradient-to-r from-primary to-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-bold hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 active:scale-95 transition-all duration-300" href="#contact" data-i18n="nav-contact">Contact Me</a>
 </div>
 <button id="mobile-menu-btn" class="md:hidden text-slate-500">
 <span class="material-symbols-outlined">menu</span>
@@ -90,11 +96,17 @@
 <div id="mobile-menu" class="fixed top-16 right-0 w-72 h-fit z-[60] bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-lg md:hidden transform translate-x-full transition-transform duration-500 ease-spring rounded-bl-3xl shadow-2xl border-l border-b border-slate-200 dark:border-slate-800">
     <div class="flex flex-col p-8">
         <nav class="flex flex-col gap-6 items-center text-center">
-            <a class="text-xl font-bold hover:text-primary hover:scale-105 transition-all duration-300" href="#" data-i18n="nav-home">Home</a>
-            <a class="text-xl font-bold hover:text-primary hover:scale-105 transition-all duration-300" href="#projects" data-i18n="nav-projects">Projects</a>
-            <button class="lang-toggle flex items-center gap-2 text-base font-bold hover:text-primary transition-all">
-                <span class="material-symbols-outlined">language</span>
-                <span class="lang-text">Am</span>
+            <a class="relative text-xl font-bold hover:text-primary transition-all duration-300 group/mob" href="#" data-i18n="nav-home">
+                Home
+                <span class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-1 bg-primary transition-all duration-300 group-hover/mob:w-1/2 rounded-full"></span>
+            </a>
+            <a class="relative text-xl font-bold hover:text-primary transition-all duration-300 group/mob" href="#projects" data-i18n="nav-projects">
+                Projects
+                <span class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-1 bg-primary transition-all duration-300 group-hover/mob:w-1/2 rounded-full"></span>
+            </a>
+            <button class="lang-toggle group flex items-center gap-2 text-lg font-bold px-6 py-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-primary/10 hover:text-primary transition-all duration-300 border border-transparent hover:border-primary/30">
+                <span class="material-symbols-outlined group-hover:rotate-180 transition-transform duration-500">language</span>
+                <span class="lang-text text-primary">Am</span>
             </button>
             <button class="theme-toggle relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 hover:text-primary hover:scale-110 transition-all duration-300 text-slate-600 dark:text-slate-400 overflow-hidden" aria-label="Toggle Dark Mode">
                 <!-- Moon Icon -->
@@ -102,7 +114,7 @@
                 <!-- Sun Icon -->
                 <span class="material-symbols-outlined absolute transition-all duration-500 ease-spring transform -rotate-90 scale-0 opacity-0 dark:rotate-0 dark:scale-100 dark:opacity-100 pointer-events-none">light_mode</span>
             </button>
-            <a class="w-full bg-primary text-white py-3 rounded-xl text-base font-bold shadow-lg shadow-primary/20 hover:bg-blue-600 transition-all duration-300 active:scale-95" href="#contact" data-i18n="nav-contact">Contact Me</a>
+            <a class="w-full bg-gradient-to-r from-primary to-blue-600 text-white py-3.5 rounded-2xl text-base font-bold shadow-lg shadow-primary/30 hover:brightness-110 transition-all duration-300 active:scale-95" href="#contact" data-i18n="nav-contact">Contact Me</a>
         </nav>
     </div>
 </div>
