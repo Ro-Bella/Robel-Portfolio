@@ -87,3 +87,23 @@ body {
     will-change: transform, opacity;
     transform: translateZ(0);
 }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-background-light);
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: var(--color-background-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}

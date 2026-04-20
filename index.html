@@ -55,6 +55,8 @@
 </head>
 <body class="bg-background-light font-display text-slate-900 antialiased dark:bg-background-dark dark:text-slate-100 transition-colors duration-500">
 <!-- Header / Navigation -->
+<!-- Scroll Progress Bar -->
+<div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-primary z-[100] transition-all duration-150" style="width: 0%"></div>
 <header class="sticky top-0 z-50 border-b border-slate-200 bg-background-light/80 backdrop-blur-md dark:border-slate-800 dark:bg-background-dark/80">
 <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 <div class="flex items-center gap-2 group cursor-pointer">
@@ -126,8 +128,8 @@
                             Expertise in end-to-end development, delivering high-performance applications with a commitment to security, scalability, and robust architecture.
                         </p>
 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-left" style="animation-delay: 1200ms;">
-    <a href="#contact" class="bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-600 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-1.5 transition-all duration-300 transform hover:scale-105 active:scale-95 ease-spring" data-i18n="hero-hire">Hire Me</a>
-    <a href="images/Robel_Anbessie_CV.pdf" target="_blank" rel="noopener noreferrer" type="application/pdf" class="bg-slate-100 dark:bg-slate-800 backdrop-blur-md border border-slate-300 dark:border-slate-600 text-slate-900 dark:text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-200 dark:hover:bg-slate-700 hover:shadow-xl hover:shadow-slate-300/50 dark:hover:shadow-black/50 hover:-translate-y-1.5 transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105 active:scale-95 ease-spring">
+    <a href="#contact" class="bg-primary text-white px-8 py-4 rounded-xl font-bold shadow-md shadow-primary/30 dark:shadow-primary/20 hover:bg-blue-600 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-1.5 transition-all duration-500 transform hover:scale-105 active:scale-95 ease-spring" data-i18n="hero-hire">Hire Me</a>
+    <a href="images/Robel_Anbessie_CV.pdf" target="_blank" rel="noopener noreferrer" type="application/pdf" class="bg-slate-100 dark:bg-slate-800 backdrop-blur-md border border-slate-300 dark:border-slate-600 text-slate-900 dark:text-white px-8 py-4 rounded-xl font-bold shadow-md shadow-slate-300/50 dark:shadow-black/50 hover:bg-slate-200 dark:hover:bg-slate-700 hover:shadow-xl hover:shadow-slate-300/50 dark:hover:shadow-black/50 hover:-translate-y-1.5 transition-all duration-700 flex items-center justify-center gap-2 transform hover:scale-105 active:scale-95 ease-spring">
         <span class="material-symbols-outlined">download</span> <span data-i18n="hero-cv">Download CV</span>
     </a>
 </div>
@@ -218,54 +220,54 @@
 <div class="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="reveal opacity-0 bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800 p-8 rounded-2xl text-center group hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
-<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-3xl">developer_board</span>
+<div class="reveal opacity-0 bg-white/20 dark:bg-slate-800/20 backdrop-blur-xl border border-white/10 dark:border-slate-700/30 p-8 rounded-2xl text-center group hover:bg-white/30 dark:hover:bg-slate-800/40 hover:border-white/40 dark:hover:border-primary/40 transition-all duration-500 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-2">
+<div class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-inner">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" class="w-12 h-12" alt="React">
 </div>
 <h3 class="text-xl font-bold mb-3">React</h3>
 <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                             Building dynamic, component-driven user interfaces with a focus on performance and seamless UX.
                         </p>
 </div>
-<div class="reveal opacity-0 bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800 p-8 rounded-2xl text-center group hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10" style="transition-delay: 100ms;">
-<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-3xl">settings_ethernet</span>
+<div class="reveal opacity-0 bg-white/20 dark:bg-slate-800/20 backdrop-blur-xl border border-white/10 dark:border-slate-700/30 p-8 rounded-2xl text-center group hover:bg-white/30 dark:hover:bg-slate-800/40 hover:border-white/40 dark:hover:border-primary/40 transition-all duration-500 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-2" style="transition-delay: 100ms;">
+<div class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-inner">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" class="w-12 h-12" alt="Node.js">
 </div>
 <h3 class="text-xl font-bold mb-3">Node.js</h3>
 <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                             Developing scalable server-side logic and robust RESTful APIs to power complex applications.
                         </p>
 </div>
-<div class="reveal opacity-0 bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800 p-8 rounded-2xl text-center group hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10" style="transition-delay: 200ms;">
-<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-3xl">database</span>
+<div class="reveal opacity-0 bg-white/20 dark:bg-slate-800/20 backdrop-blur-xl border border-white/10 dark:border-slate-700/30 p-8 rounded-2xl text-center group hover:bg-white/30 dark:hover:bg-slate-800/40 hover:border-white/40 dark:hover:border-primary/40 transition-all duration-500 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-2" style="transition-delay: 200ms;">
+<div class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-inner">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" class="w-12 h-12" alt="MongoDB">
 </div>
 <h3 class="text-xl font-bold mb-3">MongoDB</h3>
 <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                             Architecting flexible, high-availability data solutions for modern cloud-native environments.
                         </p>
 </div>
-<div class="bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800 p-8 rounded-2xl text-center group hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
-<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-3xl">terminal</span>
+<div class="reveal opacity-0 bg-white/20 dark:bg-slate-800/20 backdrop-blur-xl border border-white/10 dark:border-slate-700/30 p-8 rounded-2xl text-center group hover:bg-white/30 dark:hover:bg-slate-800/40 hover:border-white/40 dark:hover:border-primary/40 transition-all duration-500 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-2" style="transition-delay: 300ms;">
+<div class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-inner">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" class="w-12 h-12 dark:invert" alt="Django">
 </div>
 <h3 class="text-xl font-bold mb-3">Python & Django</h3>
 <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                             Building secure, scalable backends with rapid development capabilities using the Django ecosystem.
                         </p>
 </div>
-<div class="bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800 p-8 rounded-2xl text-center group hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
-<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-3xl">table_chart</span>
+<div class="reveal opacity-0 bg-white/20 dark:bg-slate-800/20 backdrop-blur-xl border border-white/10 dark:border-slate-700/30 p-8 rounded-2xl text-center group hover:bg-white/30 dark:hover:bg-slate-800/40 hover:border-white/40 dark:hover:border-primary/40 transition-all duration-500 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-2" style="transition-delay: 400ms;">
+<div class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-inner">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" class="w-12 h-12" alt="PostgreSQL">
 </div>
 <h3 class="text-xl font-bold mb-3">PostgreSQL</h3>
 <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                             Managing relational data with complex schemas, ensuring ACID compliance and query performance.
                         </p>
 </div>
-<div class="bg-background-light dark:bg-background-dark border border-slate-200 dark:border-slate-800 p-8 rounded-2xl text-center group hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
-<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-3xl">api</span>
+<div class="reveal opacity-0 bg-white/20 dark:bg-slate-800/20 backdrop-blur-xl border border-white/10 dark:border-slate-700/30 p-8 rounded-2xl text-center group hover:bg-white/30 dark:hover:bg-slate-800/40 hover:border-white/40 dark:hover:border-primary/40 transition-all duration-500 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-2" style="transition-delay: 500ms;">
+<div class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-inner">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" class="w-12 h-12" alt="APIs">
 </div>
 <h3 class="text-xl font-bold mb-3">RESTful APIs</h3>
 <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
@@ -323,7 +325,7 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 <!-- Project 1 -->
-<div class="bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-2xl border border-white/20 dark:border-slate-700/50 overflow-hidden group transform hover:-translate-y-2 transition-all duration-500 shadow-lg hover:shadow-primary/30">
+<div class="bg-white/20 dark:bg-slate-800/20 backdrop-blur-xl rounded-2xl border border-white/10 dark:border-slate-700/30 overflow-hidden group transform hover:-translate-y-2 transition-all duration-500 shadow-lg hover:shadow-primary/30 hover:bg-white/30 dark:hover:bg-slate-800/40 hover:backdrop-blur-2xl hover:border-white/40 dark:hover:border-primary/40 hover:backdrop-saturate-150">
 <div class="relative">
 <!-- You should replace this with your project image -->
 <img alt="Shega Skin Studio Preview" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" src="images/shega.jpg" loading="lazy" width="400" height="250" decoding="async" fetchpriority="low"/>
@@ -339,10 +341,10 @@
     </ul>
 </div>
 <div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">Node.js (JavaScript)</span>
-<span class="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">Web Framework: Express.js</span>
-<span class="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">Database: MongoDB , Mongoose</span>
-<span class="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full"> Authentication & Security JWT (JSON Web Token) ,Environment Variables</span>
+<span class="inline-flex items-center gap-1 text-[10px] font-bold bg-primary/10 text-primary px-2.5 py-1 rounded-lg border border-primary/20 backdrop-blur-sm hover:bg-primary hover:text-white hover:scale-110 transition-all duration-300 cursor-default uppercase tracking-wider"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js Icon" class="w-3 h-3 align-middle"> Node.js</span>
+<span class="inline-flex items-center gap-1 text-[10px] font-bold bg-primary/10 text-primary px-2.5 py-1 rounded-lg border border-primary/20 backdrop-blur-sm hover:bg-primary hover:text-white hover:scale-110 transition-all duration-300 cursor-default uppercase tracking-wider"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" alt="Express Icon" class="w-3 h-3 align-middle"> Express</span>
+<span class="inline-flex items-center gap-1 text-[10px] font-bold bg-primary/10 text-primary px-2.5 py-1 rounded-lg border border-primary/20 backdrop-blur-sm hover:bg-primary hover:text-white hover:scale-110 transition-all duration-300 cursor-default uppercase tracking-wider"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB Icon" class="w-3 h-3 align-middle"> MongoDB</span>
+<span class="inline-flex items-center gap-1 text-[10px] font-bold bg-primary/10 text-primary px-2.5 py-1 rounded-lg border border-primary/20 backdrop-blur-sm hover:bg-primary hover:text-white hover:scale-110 transition-all duration-300 cursor-default uppercase tracking-wider">JWT</span>
 </div>
 <div class="flex items-center gap-4">
 <a class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:shadow-lg hover:shadow-primary/25 transition-all" href="https://shega-skin-studio.vercel.app/" target="_blank" rel="noopener noreferrer">
@@ -355,7 +357,7 @@
 </div>
 </div>
 <!-- Project 2 -->
-<div class="bg-background-light dark:bg-background-dark rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 shadow-md hover:shadow-primary/20">
+<div class="bg-white/20 dark:bg-slate-800/20 backdrop-blur-xl rounded-2xl border border-white/10 dark:border-slate-700/30 overflow-hidden group transform hover:-translate-y-2 transition-all duration-500 shadow-lg hover:shadow-primary/30 hover:bg-white/30 dark:hover:bg-slate-800/40 hover:backdrop-blur-2xl hover:border-white/40 dark:hover:border-primary/40 hover:backdrop-saturate-150">
 <div class="relative">
 <!-- You should replace this with your project image -->
 <img alt="Project Thumbnail" class="w-full h-48 object-cover" src="https://via.placeholder.com/400x250/101622/256af4?text=Project+Image"/>
@@ -366,9 +368,9 @@
                         Provide a short, compelling description of your project here. Talk about the problem it solves and the value it brings.
                     </p>
 <div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">Next.js</span>
-<span class="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">Prisma</span>
-<span class="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">PostgreSQL</span>
+<span class="inline-flex items-center gap-1 text-[10px] font-bold bg-primary/10 text-primary px-2.5 py-1 rounded-lg border border-primary/20 backdrop-blur-sm hover:bg-primary hover:text-white hover:scale-110 transition-all duration-300 cursor-default uppercase tracking-wider"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js Icon" class="w-3 h-3 align-middle dark:invert"> Next.js</span>
+<span class="inline-flex items-center gap-1 text-[10px] font-bold bg-primary/10 text-primary px-2.5 py-1 rounded-lg border border-primary/20 backdrop-blur-sm hover:bg-primary hover:text-white hover:scale-110 transition-all duration-300 cursor-default uppercase tracking-wider"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg" alt="Prisma Icon" class="w-3 h-3 align-middle"> Prisma</span>
+<span class="inline-flex items-center gap-1 text-[10px] font-bold bg-primary/10 text-primary px-2.5 py-1 rounded-lg border border-primary/20 backdrop-blur-sm hover:bg-primary hover:text-white hover:scale-110 transition-all duration-300 cursor-default uppercase tracking-wider"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL Icon" class="w-3 h-3 align-middle"> PostgreSQL</span>
 </div>
 <div class="flex items-center gap-4">
 <a class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:shadow-lg hover:shadow-primary/25 transition-all" href="#">
@@ -381,7 +383,7 @@
 </div>
 </div>
 <!-- Project 3 (You can add more) -->
-<div class="bg-background-light dark:bg-background-dark rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 shadow-md hover:shadow-primary/20">
+<div class="bg-white/20 dark:bg-slate-800/20 backdrop-blur-xl rounded-2xl border border-white/10 dark:border-slate-700/30 overflow-hidden group transform hover:-translate-y-2 transition-all duration-500 shadow-lg hover:shadow-primary/30 hover:bg-white/30 dark:hover:bg-slate-800/40 hover:backdrop-blur-2xl hover:border-white/40 dark:hover:border-primary/40 hover:backdrop-saturate-150">
 <div class="relative">
 <!-- You should replace this with your project image -->
 <img alt="Project Thumbnail" class="w-full h-48 object-cover" src="https://via.placeholder.com/400x250/101622/256af4?text=Project+Image"/>
@@ -392,9 +394,9 @@
                         Provide a short, compelling description of your project here. Talk about the problem it solves and the value it brings.
                     </p>
 <div class="flex flex-wrap gap-2 mb-6">
-<span class="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">MongoDB</span>
-<span class="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">Mongoose</span>
-<span class="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">JWT</span>
+<span class="inline-flex items-center gap-1 text-[10px] font-bold bg-primary/10 text-primary px-2.5 py-1 rounded-lg border border-primary/20 backdrop-blur-sm hover:bg-primary hover:text-white hover:scale-110 transition-all duration-300 cursor-default uppercase tracking-wider"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB Icon" class="w-3 h-3 align-middle"> MongoDB</span>
+<span class="inline-flex items-center gap-1 text-[10px] font-bold bg-primary/10 text-primary px-2.5 py-1 rounded-lg border border-primary/20 backdrop-blur-sm hover:bg-primary hover:text-white hover:scale-110 transition-all duration-300 cursor-default uppercase tracking-wider">Mongoose</span>
+<span class="inline-flex items-center gap-1 text-[10px] font-bold bg-primary/10 text-primary px-2.5 py-1 rounded-lg border border-primary/20 backdrop-blur-sm hover:bg-primary hover:text-white hover:scale-110 transition-all duration-300 cursor-default uppercase tracking-wider">JWT</span>
 </div>
 <div class="flex items-center gap-4">
 <a class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:shadow-lg hover:shadow-primary/25 transition-all" href="#">
@@ -694,6 +696,14 @@
         } else {
             header.classList.remove('shadow-md');
         }
+    });
+    
+    // Scroll Progress Bar Logic
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById("scroll-progress").style.width = scrolled + "%";
     });
 
     // Mobile Bottom Nav Active State Logic
