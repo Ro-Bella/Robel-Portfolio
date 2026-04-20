@@ -4,6 +4,7 @@
   "description": "",
   "main": "tailwind.config.js",
   "scripts": {
+    "start": "npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx tailwindcss -i ./input.css -o ./output.css --watch",
     "build": "npx tailwindcss -i ./input.css -o ./output.css --minify"
