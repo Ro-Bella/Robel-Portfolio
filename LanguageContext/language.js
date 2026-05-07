@@ -34,9 +34,18 @@ const translations = {
         "label-subject": "Subject",
         "label-message": "Message",
         "btn-submit": "Submit Message",
-        "footer-rights": "All rights reserved."
+        "footer-rights": "All rights reserved.",
+        "stat-deployments": "Deployments",
+        "stat-uptime": "Uptime Focus",
+        "stat-commitment": "Commitment",
+        "stat-security": "Security Audit"
     },
     am: {
+        "nav-about": "ስለ እኔ",
+        "about-title": "ስለ እኔ",
+        "about-p1": "ዘመናዊ የዌብ ቴክኖሎጂዎችን በመጠቀም የሙሉ-ስታክ ዌብ ገንቢ ነኝ። ውስብስብ ችግሮችን በመፍታት እና ለተጠቃሚ ምቹ የሆኑ ልምዶችን በመፍጠር በቴክኖሎጂ ጉዞዬ እጓዛለሁ።",
+        "about-p2": "በMERN ስታክ (MongoDB, Express, React, Node.js) እና Django ባለው ልምዴ፣ ደህንነታቸው የተጠበቁ፣ በቀላሉ ሊያድጉ የሚችሉ እና ከፍተኛ አፈጻጸም ያላቸውን አፕሊኬሽኖች ከመሰረቱ እገነባለሁ።",
+        "about-p3": "ከኮዲንግ ባሻገር፣ ለደንበኞቼ ዘመናዊ መፍትሄዎችን ለማቅረብ ያለማቋረጥ ለመማር እና የቅርብ ጊዜዎቹን የኢንዱስትሪ አዝማሚያዎች ለመከታተል ቁርጠኛ ነኝ።",
         "nav-home": "መነሻ",
         "nav-projects": "ፕሮጄክቶች",
         "nav-contact": "አግኙኝ",
@@ -71,7 +80,11 @@ const translations = {
         "label-subject": "ርዕስ",
         "label-message": "መልዕክት",
         "btn-submit": "መልዕክት ላክ",
-        "footer-rights": "መብቱ በህግ የተጠበቀ ነው።"
+        "footer-rights": "መብቱ በህግ የተጠበቀ ነው።",
+        "stat-deployments": "የተሰሩ ስራዎች",
+        "stat-uptime": "የስራ ዝግጁነት",
+        "stat-commitment": "ለስራው መሰጠት",
+        "stat-security": "የደህንነት ምርመራ"
     }
 };
 
