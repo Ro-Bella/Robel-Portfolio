@@ -1,5 +1,10 @@
 const translations = {
     en: {
+        "nav-about": "About Me",
+        "about-title": "About Me",
+        "about-p1": "I am a Full-Stack Web Developer utilizing modern web technologies. I navigate my technology journey by solving complex problems and creating user-friendly experiences.",
+        "about-p2": "With my experience in the MERN stack (MongoDB, Express, React, Node.js) and Django, I build secure, scalable, and high-performance applications from scratch.",
+        "about-p3": "Beyond coding, I am committed to continuously learning and keeping up with the latest industry trends to provide modern solutions for my clients.",
         "nav-home": "Home",
         "nav-projects": "Projects",
         "nav-contact": "Contact Me",
